@@ -44,14 +44,15 @@ namespace Bank
             }
         }
 
-        /// <value>Property <c> AccountHolder</c> Name of account owner</value>
+        /// <value>Name of account owner</value>
         public string AccountHolder => $"{_fname} {_sname}";
-
+        /// <value>Description of account</value>
         public string AccountInfo => $"Holder: {AccountHolder}\nAccount no: {Account_number}\nDate created: {created}";
 
-        /// <summary>Method <c>Deposit</c> Make a deposit</summary>
+        /// <summary>Make a deposit into account</summary>
         /// <param name="amt"> Amount to deposit </param>
         /// <param name="note">Description of Transaction</param>
+        /// <exception cref="ArgumentOutOfRangeException"></exception>
         public virtual void Deposit(decimal amt, string note = "CR")
         {
             if (amt <= 0)
@@ -61,18 +62,20 @@ namespace Bank
             transactions.Add(new Transactions(amt, DateTime.Now.ToLocalTime(), note));
         }
 
-        /// <summary>Method <c>WithDrawal</c> Make a withdrawal</summary>
+        /// <summary>Make a withdrawalfrom acccount</summary>
         /// <param name="amt"> Amount to withdraw </param>
         public virtual void WithDrawal(decimal amt, string note)
         {
             transactions.Add(new Transactions(-amt, DateTime.Now.ToLocalTime(), note));
         }
 
+        /// <summary>Format list of transactions into a table like view</summary>
+        /// <returns>string of all running transactions recorded</returns>
         public string AccountHistory()
         {
             var report = new StringBuilder();
             report.AppendLine("Date\t\t\t|\tAmount\t\t| Desc");
-            report.AppendLine("-----------------------------------------------------------------------");
+            report.AppendLine("---------------------------------------------------------------------");
 
             foreach (var item in transactions)
             {
