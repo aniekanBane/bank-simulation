@@ -79,7 +79,7 @@ namespace Bank
 
             foreach (var item in transactions)
             {
-                report.AppendLine($"{item.Date}\t|\t{item.Amount:C}\t\t| {item.Notes}");
+                report.AppendLine($"{item.Date}\t|\t{item.Amount:C}\t| {item.Notes}");
             }
             //Console.WriteLine(report.ToString());
 
