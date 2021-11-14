@@ -18,10 +18,14 @@ Or if you have visual studio or vscode, you can clone it from there and run the 
 
 ![startpage](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/start.png)
 
-- Operations page
+- Account seection
 
 ![accounts](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/accounts.png)
 
+- Operations page
+
+![selection](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/selection.png)
+
 - Example choice (List of Transactions)
 
-![transcastions](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/Transactions.png)
+![transcastions](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/transactions.png)
