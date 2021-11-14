@@ -15,5 +15,8 @@ Or if you have visual studio or vscode, you can clone it from there and run the 
 
 ### Functions
 - The start page
-[!startpage](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/start.png)
+![startpage](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/start.png)
 - Operations page
+![accounts](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/accounts.png)
+- Example choice (List of Transactions)
+![transcastions](https://github.com/aniekanBane/bank-simulation/blob/master/Bank/Images/Transactions.png)
