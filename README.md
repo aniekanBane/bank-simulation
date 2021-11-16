@@ -1,4 +1,4 @@
-# Banking Account Sim
+# Bank Account Sim
 Simulation of common banking transactions.
 This project is based of the C#101 tutorials on .NET series and Learning C# by Joe Marini on LinkedIn learning
 
