@@ -154,8 +154,8 @@ namespace bank
             ifstream user("db/C" + to_string(pin));
 
             if (count == 3){
-                cout << "Please try creating an account." <<endl;
-                EXIT_FAILURE;
+                cout << "Please create an account or try again later!." <<endl;
+                exit(1);
             }
         }while (!user.is_open());
     }
@@ -170,17 +170,4 @@ namespace bank
     //     }
     // }
 
-    // void load(Customer *c)
-    // {
-    //     unsigned long id;
-    //     cout << "Enter your Id: " << endl;
-    //     cin >> id;
-
-    //     ifstream file("db/C" + to_string(id));
-
-    //     {
-    //         boost::archive::text_iarchive ia(file);
-    //         ia >> *c;
-    //     }
-    // }
 }
