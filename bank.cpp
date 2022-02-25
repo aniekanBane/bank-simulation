@@ -4,6 +4,7 @@
 #include <iostream>
 #include <iomanip>
 #include <fstream>
+#include <unistd.h>
 #include <exception>
 #include <algorithm>
 //#include <boost/serialization/list.hpp>
@@ -105,11 +106,12 @@ namespace bank
         char fn[50], sn[50];
         cout << "Let's begin setting up your account" <<endl;
         cout << "***********************************" <<endl;
-        cout << "Enter your first name:" <<endl;
+        cout << "Enter your first name: ";
         cin >> fn;
-        cout << "Enter your surname:" <<endl;
+        cout << "Enter your surname: ";
         cin >> sn;
         cout << "\rPlease wait as we setup your accounts" <<endl;
+        sleep(1);
         accounts.push_back(CurrentAccount(fn, sn, 0.0));
         accounts.push_back(SavingsAccount(fn, sn, 0.0));
         userId = rd();

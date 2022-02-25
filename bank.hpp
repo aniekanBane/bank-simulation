@@ -9,6 +9,7 @@ namespace bank
 {
     enum TransactionType{Debit, Credit, Interest, Charge};
 
+    // Completed exchange
     class Transaction{
         public:
             double amount;
@@ -19,6 +20,7 @@ namespace bank
             void view() const;
     };
 
+    //Base class for bank accounts
     class Account{
         private:
             char fname[50], sname[50];
@@ -29,7 +31,6 @@ namespace bank
             double balance;
         public:
             friend double GetBalance(Account acct);
-
             Account(char *fname, char *sname, double balance);
             virtual void deposit(double amt);
             virtual void withdraw(double amt);
