@@ -1,0 +1,15 @@
+project(Bank-CPPTests)
+
+# SET(Boost_USE_STATIC_LIBS OFF)
+# SET(Boost_USE_MULTITHREAD ON)
+
+find_package(Boost 1.82.0 REQUIRED COMPONENTS unit_test_framework)
+
+file(GLOB SOURCES "*.cpp")
+
+add_executable(account_test ${SOURCES} ../src/account.cpp)
+
+target_include_directories(account_test PRIVATE ${CMAKE_SOURCE_DIR}/include)
+target_link_libraries(account_test PRIVATE Boost::unit_test_framework)
+
+add_test(NAME AccountTest COMMAND account_test)

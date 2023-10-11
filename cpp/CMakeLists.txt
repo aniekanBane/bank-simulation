@@ -1,23 +1,20 @@
 cmake_minimum_required(VERSION 3.1.0)
-project(Bank VERSION 0.1.0)
+project(Bank-CPP VERSION 2.0.0)
+
+option(BUILD_TESTS "Build tests" ON)
 
 include(CTest)
 enable_testing()
 
-set(Boost_USE_STATIC_LIBS OFF) 
-set(Boost_USE_MULTITHREADED ON)  
-set(Boost_USE_STATIC_RUNTIME OFF)
+set(CMAKE_CXX_STANDARD 17)
 
-find_package(nlohmann_json REQUIRED)
-find_package(Boost 1.76.0 REQUIRED COMPONENTS serialization)
+if (BUILD_TESTS)
+    add_subdirectory(tests)
+endif()
 
-set(CMAKE_CXX_STANDARD 11)
+add_executable(${PROJECT_NAME} src/account.cpp bank.hpp bank.cpp main.cpp)
 
-include_directories(${BOOST_INCLUDE_DIRS})
-
-add_executable(Bank bank.hpp bank.cpp main.cpp)
-
-target_link_libraries(${PROJECT_NAME} PRIVATE nlohmann_json::nlohmann_json ${Boost_LIBRARIES})
+target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
 set(CPACK_PROJECT_NAME ${PROJECT_NAME})
 set(CPACK_PROJECT_VERSION ${PROJECT_VERSION})
