@@ -11,13 +11,39 @@ clone the repository and in your terminal do the following command
 git clone https://github.com/aniekanBane/bank-simulation.git
 ```
 
-```bash
-cd ~/bank-simulation/Bank dotnet run
+## RUN
+
+### C++
+
+Create build directory
+
+```shell
+mkdir build && cd build
 ```
 
-Or if you have visual studio or vscode, you can clone it from there and run the program
+Build Cmake with BUILD_TESTS `OFF` (download boost to use enable testing)
 
-### Functions
+```shell
+cmake ../cpp -DBUILD_TESTS=OFF && cmake --build
+```
+
+Finally run the program
+
+```shell
+./Bank-CPP
+```
+
+### CSharp
+
+```bash
+dotnet run --project csharp/Bank
+```
+
+Or use vscode, you can clone it from there and run the program **easier**
+
+### Operations
+
+>**Images are from the csharp version**
 
 - The start page
 
