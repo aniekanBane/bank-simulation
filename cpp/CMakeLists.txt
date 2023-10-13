@@ -12,7 +12,7 @@ if (BUILD_TESTS)
     add_subdirectory(tests)
 endif()
 
-add_executable(${PROJECT_NAME} src/account.cpp bank.hpp bank.cpp main.cpp)
+add_executable(${PROJECT_NAME} src/account.cpp main.cpp)
 
 target_include_directories(${PROJECT_NAME} PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 
